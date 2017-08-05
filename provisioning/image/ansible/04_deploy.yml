@@ -11,10 +11,6 @@
     - synchronize: src=../files/env.sh dest=/home/isucon/env.sh owner=no group=no
     - file: path=/home/isucon owner=isucon group=isucon state=directory recurse=yes
       become_user: root
-    - name: perl
-      shell: PATH=/home/isucon/.local/perl/bin:$PATH carton install --deployment
-      args:
-        chdir: /home/isucon/webapp/perl
     - name: python
       shell: /bin/bash /home/isucon/webapp/python/setup.sh
       args:
